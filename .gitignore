@@ -39,7 +39,3 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-
-
-#project specific
-Soil_Dataset/
