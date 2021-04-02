@@ -39,3 +39,5 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+Deployment/.vs/
+Deployment/__pycache__/
