@@ -1,4 +1,4 @@
-FROM jjanzic/docker-python3-opencv
+FROM oza6ut0ne/opencv
 WORKDIR /soilClassifier/
 COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
