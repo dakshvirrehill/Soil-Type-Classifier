@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import cv2
 from PIL import Image
 import numpy as np
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 
 
 def init():
