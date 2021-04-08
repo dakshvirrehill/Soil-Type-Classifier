@@ -60,7 +60,7 @@
 				}
 				formData = new FormData();
 				formData.append('image', file);
-				fetch('https://ec2-18-221-69-232.us-east-2.compute.amazonaws.com/getResult',{
+				fetch('http://ec2-18-221-69-232.us-east-2.compute.amazonaws.com/getResult',{
 					method:'POST',
 					body: formData
 				}).then((response) => response.json())
