@@ -13,9 +13,13 @@ def init():
 
 def preprocess_image(img):
     """Preprocess uploaded image before sending for prediction"""
+    # convert the pillow image array into a numpy array
     img = np.array(img)
+    # transform the array to BGR format of cv2 images
     img = img[:, :, ::-1].copy()
+    # resize the image to input size of model
     img = cv2.resize(img, (32, 32))
+    # expand dimensions to ensure model input dimensions
     return np.expand_dims(img, axis=0)
 
 
@@ -41,4 +45,4 @@ def getResult():
 
 if __name__ == '__main__':
     init()
-    app.run(host='0.0.0.0',port=4567)
+    app.run(host='0.0.0.0', port=4567)

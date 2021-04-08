@@ -40,6 +40,7 @@
 		<script src="{{ url_for('static', filename="js/knockout-file-bindings.js") }}"></script>
 		<script>
 			model_classes = ["Alluvial", "Black", "Clay", "Red"]
+			classes_wiki = ["https://en.wikipedia.org/wiki/Alluvium","https://en.wikipedia.org/wiki/Black_soil","https://en.wikipedia.org/wiki/Clay","https://en.wikipedia.org/wiki/Red_soil"]
 			displayResultDiv = document.getElementById("displayResult")
 			var viewModel = {};
 			viewModel.fileData = ko.observable({
@@ -69,7 +70,15 @@
 					if(response.status == 200)
 					{
 						displayResultDiv.classList.add("well");
-						displayResultDiv.innerHTML = "This soil is of type " + model_classes[response.result]
+						text = document.createTextNode("This soil is of type ");
+						displayResultDiv.appendChild(text);
+						aNode = document.createElement('a');
+						aNodeText = document.createTextNode(model_classes[response.result]);
+						aNode.appendChild(aNodeText);
+						aNode.title = model_classes[response.result]
+						aNode.href = classes_wiki[response.result]
+						aNode.target = '_blank'
+						displayResultDiv.appendChild(aNode)
 					}
 				}).catch(error => console.log(error));
 			});
