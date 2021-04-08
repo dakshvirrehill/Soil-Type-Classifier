@@ -1,4 +1,4 @@
-FROM python:3.8.5
+FROM jjanzic/docker-python3-opencv
 WORKDIR /soilClassifier/
 COPY . .
 RUN pip install -r requirements.txt

@@ -2,4 +2,3 @@ flask==1.1.2
 numpy==1.19.5
 pillow==8.1.0
 keras==2.4.3
-opencv-contrib-python
