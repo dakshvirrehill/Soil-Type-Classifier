@@ -39,6 +39,7 @@
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js'></script>
 		<script src="{{ url_for('static', filename="js/knockout-file-bindings.js") }}"></script>
 		<script>
+			model_classes = ["Alluvial", "Black", "Clay", "Red"]
 			displayResultDiv = document.getElementById("displayResult")
 			var viewModel = {};
 			viewModel.fileData = ko.observable({
@@ -59,7 +60,7 @@
 				}
 				formData = new FormData();
 				formData.append('image', file);
-				fetch('<url>/getResult',{
+				fetch('http://127.0.0.1:4567/getResult',{
 					method:'POST',
 					body: formData
 				}).then((response) => response.json())
@@ -68,7 +69,7 @@
 					if(response.status == 200)
 					{
 						displayResultDiv.classList.add("well");
-						displayResultDiv.innerHTML = "This soil is of type " + response.result
+						displayResultDiv.innerHTML = "This soil is of type " + model_classes[response.result]
 					}
 				}).catch(error => console.log(error));
 			});

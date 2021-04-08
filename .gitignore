@@ -41,3 +41,4 @@ dmypy.json
 cython_debug/
 Deployment/.vs/
 Deployment/__pycache__/
+.ipynb_checkpoints/
